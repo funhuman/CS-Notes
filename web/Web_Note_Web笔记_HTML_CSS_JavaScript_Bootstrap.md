@@ -73,7 +73,7 @@ a, a:focus, a:visited, a:link, a:hover, a:active {
 }
 ```
 
-字距与行距
+字间距与词间距
 ```
 letter-spacing: 0.5em;
 word-spacing: 0.5em;
