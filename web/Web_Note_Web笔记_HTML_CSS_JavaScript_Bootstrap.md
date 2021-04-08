@@ -33,8 +33,8 @@ DOCTYPE 不区分大小写
 
 图片链接
 ```
-<a href="http://www.mycodes.net";; target="_blank">
-  <img src="http://www.mycodes.net/wwwimages/n/163logo.gif"; width="150" height="100">
+<a href="http://www.mycodes.net" target="_blank">
+  <img src="http://www.mycodes.net/wwwimages/n/163logo.gif" width="150" height="100">
 </a>
 ```
 
@@ -126,10 +126,10 @@ text-indent: 2em;
 
 毛玻璃效果
 ```
-background-color: hsla(0,0%,100%,.3);
+background-color: hsla(0, 0%, 100%, .3);
 ```
 
-[底部固定](https://blog.csdn.net/xianglikai1/article/details/78411615)
+[底部固定](https://blog.csdn.net/xianglikai1/article/details/78411615) | 永久与相对两种代码
 ```
 <!DOCTYPE html>
 <html>
@@ -157,6 +157,104 @@ background-color: hsla(0,0%,100%,.3);
     内容，可以大量复制看效果<br />
 
     <div class="footer">固定在底部</div>
+</body>
+</html>
+```
+
+```
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .footer {
+            margin-top: -50px;
+            height: 50px;
+            background-color: #eee;
+            z-index: 9999;
+            clear: both;
+        }
+
+        .wrap {
+            min-height: 100%;
+        }
+
+        .main {
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">
+            内容，可以大量复制看效果<br />
+
+        </div>
+    </div>
+    <div class="footer">相对在底部</div>
+</body>
+</html>
+```
+
+404 Page | [查看效果](http://www.infzm.com/content/20509/0)
+```
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Page Not Found</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+  <style>
+    html, body {
+      background-color: #fff;
+      color: #636b6f;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 100;
+      height: 100vh;
+      margin: 0;
+    }
+    .full-height {
+      height: 100vh;
+    }
+    .flex-center {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    .position-ref {
+      position: relative;
+    }
+    .content {
+      text-align: center;
+    }
+    .title {
+      font-size: 36px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-center position-ref full-height">
+    <div class="content">
+      <div class="title">
+        Sorry, the page you are looking for could not be found.
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 ```
@@ -240,3 +338,5 @@ document.onselectstart=new Function('event.returnValue=false;');
     }
 </script>
 ```
+
+## Bootstrap
