@@ -1,5 +1,4 @@
 # CS-Notes
-Computer Science Notes丨计算机科学笔记
 
 <img src="https://img.shields.io/badge/license-MIT-green.svg" />
 

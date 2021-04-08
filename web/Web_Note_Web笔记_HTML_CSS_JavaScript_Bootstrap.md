@@ -162,7 +162,6 @@ background-color: hsla(0, 0%, 100%, .3);
 ```
 
 ```
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -340,3 +339,37 @@ document.onselectstart=new Function('event.returnValue=false;');
 ```
 
 ## Bootstrap
+
+
+## Others
+
+### 相对路径与绝对路径
+
+[参考](http://www.yinhuafeng.cn/seo/420.html)
+
+例如C盘下有一个文件夹test，文件夹下有文本文件text1和text2。
+
+test：C:/test
+text1：C:/test/text1.txt
+text2：C:/test/text2.txt
+
+text1中调用text2：
+(1) ./text2.txt
+(2) text2.txt (省略./)
+(3) ../test/text2.txt
+
+即：
+- `/` 代表根目录
+- `./` 代表文件所在的目录（可省略）
+- `../` 代表文件所在的上一级目录
+- `../../`  代表文件所在的上两级目录
+- `#` **特别的**，在网页中#可以代表本页面
+
+### echarts
+
+[5 分钟上手 ECharts](https://echarts.apache.org/zh/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts)
+
+引入 ECharts
+```
+<script src="../js/echarts.min.js"></script>
+```
