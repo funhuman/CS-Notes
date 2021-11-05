@@ -56,6 +56,31 @@ VisualStudioVersion = 10
 </configuration>
 ```
 
+## 设置数据库的连接字段
+
+`Web.config` 文件中：
+```
+<configuration>
+  <system.webServer>
+    ...
+  </system.webServer>
+	<connectionStrings>
+    <!-- Windows 身份验证 -->
+		<add name="MyConn" connectionString="server=.; database={数据库名}; integrated security=true"/>
+		<!-- SQL Server 身份验证 -->
+    <add name="MyConn" connectionString="Data Source={链接};Initial Catalog=haieducationcn;User ID={username};Password={password}" providerName="System.Data.SqlClient"/>-->
+	</connectionStrings>
+
+</configuration>
+```
+
+
+## 获取DataTable第一行第一列的值
+
+```
+dt.Rows[0][0].ToString();
+```
+
 ## asp.net 对象
 
 ASP.NET中有以下几个对象：

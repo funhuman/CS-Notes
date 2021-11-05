@@ -42,7 +42,7 @@ DOCTYPE 不区分大小写
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <title>Page title</title>
   </head>
   <body>
@@ -50,6 +50,28 @@ DOCTYPE 不区分大小写
     <h1 class="hello-world">Hello, world!</h1>
   </body>
 </html>
+```
+
+```
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="UI.index" %>
+
+<%@ Register TagPrefix="Header" TagName="Header" Src="/AscxModular/Header.ascx" %>
+<%@ Register TagPrefix="Footer" TagName="Footer" Src="/AscxModular/Footer.ascx" %>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <title>首页 - iban 网</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <form id="form1" runat="server">
+    <Header:Header ID="Header" runat="server"></Header:Header>
+    <Footer:Footer ID="Footer" runat="server"></Footer:Footer>
 ```
 
 网页模板（注释版）
@@ -65,12 +87,12 @@ DOCTYPE 不区分大小写
     <!-- 设置缩放控制 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <!-- 设置网页图标 -->
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <!-- 设置网页标题 -->
     <title>Page title</title>
   </head>
   <body>
-    <img src="images/company-logo.png" alt="Company">
+    <img src="/images/company-logo.png" alt="Company">
     <h1 class="hello-world">Hello, world!</h1>
   </body>
 </html>
@@ -378,9 +400,20 @@ JavaScript 注释
 document.body.contentEditable='true';
 ```
 
+网页跳转
+```
+window.location.href='index.html';
+```
+
+网页刷新
+```
+window.location.reload();
+```
+
 跳转网页的搜索功能
 ```
 <input id="ipt" onkeydown="KeyDown()" class="form-control" type="text" placeholder="2021年还可以用ASP.NET吗？">
+<span class="btn btn-success" onclick="search()">搜索</span>
 <script>
     function KeyDown() {
         if (event.keyCode == 13) {
@@ -399,10 +432,15 @@ document.body.contentEditable='true';
 
 弹窗
 ```
-alert('弹窗')
+alert('弹窗');
 ```
 ```
 <button type="button" onclick="alert('Welcome!')">点击这里</button>
+```
+
+控制台日志
+```
+console.log("登录页<br>前端登录测试");
 ```
 
 禁止滚动
@@ -431,7 +469,7 @@ document.oncontextmenu=new Function('event.returnValue=false;');
 document.onselectstart=new Function('event.returnValue=false;');
 ```
 
-显示时间效果丨[参考](https://blog.csdn.net/Majker/article/details/89479109)
+?显示时间效果丨[参考](https://blog.csdn.net/Majker/article/details/89479109)
 ```
 <input class="form-control" id="time" readonly />
 <script>
@@ -543,16 +581,22 @@ function isEmpty(v) {
 }
 ```
 
+```
+Copyright &copy; <span id="copyyear"></span>&nbsp;funhuman
+<script>document.getElementById('copyyear').innerHTML = new Date().getFullYear();</script>
+```
 [基于JavaScript的网页头部尾部模板](https://www.cnblogs.com/jtjds/p/5326200.html)
 [HTML to JS]转换工具(http://tool.chinaz.com/Tools/Html_Js.aspx)
+
+<!-- js 结束 -->
 
 ## jQuery
 [按钮变色效果](https://blog.csdn.net/qq_36213352/article/details/81295719)
 ```
 function SupendButtonClick(obj) {
-  //清空其它同类按钮选中颜色
-  $('div[id^="SupendButton-"]').css("background-color", "#4cb0f9");//按钮原来颜色
-  //点击后变色
+  // 清空其它同类按钮选中颜色
+  $('div[id^="SupendButton-"]').css("background-color", "#4cb0f9"); // 按钮原来颜色
+  // 点击后变色
   $(obj).css("background-color", "red");
 }
 ```
