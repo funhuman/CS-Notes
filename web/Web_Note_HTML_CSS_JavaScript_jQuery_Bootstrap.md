@@ -112,7 +112,7 @@ CSS 注释
 块居中和行居中
 ```
 margin: 0 auto;
-text-align：center;
+text-align: center;
 ```
 
 textarea自动宽度
@@ -695,3 +695,8 @@ $.ajax({
   }
 });
 ```
+
+去除textarea去掉右下角三角图标
+textarea{
+resize:none
+}
