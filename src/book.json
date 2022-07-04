@@ -1,0 +1,79 @@
+{
+    "title": "编程笔记",
+    "author": "滑稽之雄",
+    "description": "",
+    "isbn": "",
+    "language": "zh-hans",
+    "direction": "ltr",
+    "links": {
+        "sidebar": {
+            "zu60.cn": "https://zu60.cn",
+            "funhuman": "https://funhuman.github.io/"
+        }
+    },
+    "plugins": [
+        "github",
+        "pageview-count",
+        "mermaid-gb3",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "splitter",
+        "-sharing",
+        "sharing-plus",
+        "expandable-chapters-small",
+        "anchor-navigation-ex",
+        "edit-link",
+        "copy-code-button",
+        "chart",
+        "favicon-plus",
+        "donate"
+    ],
+    "pluginsConfig": {
+        "github": {
+          "url": "https://github.com/snowdreams1006/snowdreams1006.github.io"
+        },
+        "sharing": {
+           "douban": false,
+           "facebook": false,
+           "google": false,
+           "hatenaBookmark": false,
+           "instapaper": false,
+           "line": false,
+           "linkedin": false,
+           "messenger": false,
+           "pocket": false,
+           "qq": true,
+           "qzone": true,
+           "stumbleupon": false,
+           "twitter": false,
+           "viber": false,
+           "vk": false,
+           "weibo": false,
+           "whatsapp": false,
+           "all": [
+               "facebook", "google", "twitter",
+               "weibo", "instapaper", "linkedin",
+               "pocket", "stumbleupon"
+           ]
+       },
+       "edit-link": {
+          "base": "https://funhuman.github.io/CS-Notes/blob/main",
+          "label": "编辑本页"
+        },
+        "chart": {
+          "type": "c3"
+        },
+        "favicon": "/images/favicon.ico",
+        "appleTouchIconPrecomposed152": "/images/apple-touch-icon-precomposed-152.png",
+        "output": "docs",
+        "donate": {
+          "wechat": "/images/wechat.jpg",
+          "alipay": "/images/alipay.jpg",
+          "title": "",
+          "button": "捐赠",
+          "alipayText": "",
+          "wechatText": ""
+        }
+    }
+}
