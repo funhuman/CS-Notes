@@ -56,7 +56,7 @@ conda install selenium
 
 ### 浏览器
 
-启动浏览器（详见[代码1](../code/code1_env_test.py)）
+启动浏览器（详见[代码1](./code/code1_env_test.py)）
 ```
 driver = webdriver.Edge()
 ```
