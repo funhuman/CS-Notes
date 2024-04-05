@@ -32,27 +32,46 @@ start b.bat
 ```
 
 ## 列出文件
+
+输出当前目录下所有文件的文件名到文本文件
+
 ```
-:: 输出当前目录下所有文件的文件名到文本文件
 dir /b >list.txt
-:: 输出当前目录下所有文件的文件名（PowerShell）
-dir -Name
-:: 列出当前目录下文件夹里的所有文件信息
+```
+
+列出当前目录下文件夹里的所有文件信息
+
+```
 dir /s
 ```
 
-## 时间
+输出当前目录下所有文件的文件名（PowerShell）
+
 ```
-:: 输出当前时间
+dir -Name
+```
+
+## 时间
+
+> 注意：时间依赖计算机时间格式等设置，建议测试后使用。
+
+输出当前时间
+
+```
 @echo off
 set "t=%time: =0%"
 set "dates=%date:~0,4%%date:~5,2%%date:~8,2%"
-set "times=%date:~0,4%%date:~5,2%%date:~8,2%_%t:~,2%%time:~3,2%%time:~6,2%"
+set "times=%date:~0,4%%date:~5,2%%date:~8,2%_%time:~,2%%time:~3,2%%time:~6,2%"
+echo %dates%
 echo %times%
 pause
 ```
+
+正确的例子：
+
 ```
-if "%time:~0,1%"==" " (echo 　　早上好) ELSE echo 　　加油
+20240405
+20240405_131246
 ```
 
 ## 关机
@@ -78,7 +97,7 @@ if errorlevel 2 goto n
 if errorlevel 1 goto y
 ```
 
-## 环境变量
+## 显示环境变量
 ```
 @echo off
 echo homedrive %homedrive%
@@ -86,6 +105,29 @@ echo username %username%
 echo appdata %appdata%
 pause
 ```
+
+## 设置环境变量
+
+设置当前环境变量
+
+```
+set test "text"
+```
+
+设置用户环境变量
+
+```
+setx test "text"
+setx path "%path%;D:\text"
+```
+
+设置系统环境变量（管理员权限）
+
+```
+setx test "text" /m
+```
+
+更多参考：[cmd 设置环境cmd环境变量命令set 设置永久环境变量命令setx](https://blog.csdn.net/qq_21808961/article/details/86749758)
 
 ## 标题
 ```
@@ -98,6 +140,7 @@ echo.
 ```
 
 ## 延时
+
 (不适用bat文件)
 ```
 timeout /t 3
@@ -116,10 +159,10 @@ python xxx.py ^u
 chcp 65001
 ```
 
-## 环境变量
-
-[cmd 设置环境cmd环境变量命令set 设置永久环境变量命令setx](https://blog.csdn.net/qq_21808961/article/details/86749758)
+## 顺序执行
 
 ```
-setx env_name env_value
+cd D:\test && start test.bat
 ```
+
+更多参考：[cmd-连续执行多条命令](https://blog.csdn.net/qq_34159047/article/details/109734803)
