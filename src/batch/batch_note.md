@@ -85,9 +85,9 @@ shutdown /a
 ## 拖入文件
 ```
 :: 显示拖入文件的文件名
-%~nx1
+"%~nx1"
 :: 显示拖入文件的路径和文件名
-%~dp1%~nx1
+"%~dp1%~nx1"
 ```
 
 ## 选择
@@ -166,3 +166,21 @@ cd D:\test && start test.bat
 ```
 
 更多参考：[cmd-连续执行多条命令](https://blog.csdn.net/qq_34159047/article/details/109734803)
+
+## 判断文件是否存在
+
+```
+set checkFilePath="xxx.xxx"
+
+if not exist %checkFilePath% (
+    ren *.jpg *.xxx
+) else (
+    ren *.xxx *.jpg
+)
+```
+
+## 创建指定大小的空文件
+
+```
+fsutil file createnew test.txt 123456
+```
