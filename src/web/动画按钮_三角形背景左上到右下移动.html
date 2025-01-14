@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画按钮</title>
+    <style>
+        /* 按钮样式 */
+        .expanding-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid orange; /* 固定边框 */
+            border-radius: 0px;
+            color: white; /* 初始文字颜色 */
+            position: relative;
+            overflow: hidden;
+            background-color: transparent; /* 背景透明 */
+            transition: color 0.3s ease; /* 文字颜色的过渡效果 */
+            z-index: 1; /* 提升文字层级 */
+            animation: change-text-color 2s infinite; /* 文字颜色的变化动画 */
+        }
+
+        /* 伪元素背景层 */
+        .expanding-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: orange; /* 固定背景颜色 */
+            clip-path: polygon(0% 0%, 5% 0%, 0% 5%); /* 初始三角形位置，几乎不可见 */
+            animation: expand-triangle 2s infinite; /* 背景的扩展动画 */
+            z-index: -1; /* 使背景层处于文字下层 */
+        }
+
+        /* 三角形扩展动画 */
+        @keyframes expand-triangle {
+            0% {
+                clip-path: polygon(0% 0%, 5% 0%, 0% 5%); /* 初始小三角形 */
+            }
+            100% {
+                clip-path: polygon(0% 0%, 190% 0%, 0% 190%); /* 完全填充整个按钮 */
+            }
+        }
+
+        /* 文字颜色变化动画 */
+        @keyframes change-text-color {
+            0% {
+                color: white; /* 初始文字颜色 */
+            }
+            100% {
+                color: black;  /* 最终文字颜色 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="expanding-button">动画按钮</button>
+</body>
+</html>
